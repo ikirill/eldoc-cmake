@@ -1275,7 +1275,4 @@ to ``WindowsStore``." nil) ("XCODE" "``True`` when using :generator:`Xcode` gene
   ))
 
 (provide 'eldoc-cmake)
-;; Local Variables:
-;; byte-compile-warnings: (not cl-functions)
-;; End:
 ;;; eldoc-cmake.el ends here

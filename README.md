@@ -4,7 +4,5 @@ CMake files.
 To install:
 ```
 (use-package eldoc-cmake
-  :commands eldoc-cmake-enable
-  :config
-  (add-hook 'cmake-mode-hook #'eldoc-cmake-enable))
+  :hook (cmake-mode . eldoc-cmake-enable))
 ```
