@@ -4,7 +4,6 @@ CMake files.
 To install:
 ```
 (use-package eldoc-cmake
-  :load-path "~/Sandboxes/eldoc-cmake"
   :commands eldoc-cmake-enable
   :config
   (add-hook 'cmake-mode-hook #'eldoc-cmake-enable))
