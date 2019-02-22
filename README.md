@@ -8,4 +8,4 @@ To install:
 ```
 
 What it looks like:
-[screenshot.png](screenshot.png)
+![screenshot.png](screenshot.png)
