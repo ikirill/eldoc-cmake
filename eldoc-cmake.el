@@ -1,8 +1,16 @@
 ;;; eldoc-cmake.el --- Eldoc support for CMake -*- lexical-binding: t -*-
+;;
+;; Author: Kirill Ignatiev
+;; URL: https://github.com/ikirill/eldoc-cmake
+;; Version: 0
+;; Package-Requires: ((emacs "24.4"))
+;;
 ;;; Commentary:
 ;;
 ;; CMake eldoc support, using a pre-generated set of docstrings from
 ;; CMake's documentation source.
+;;
+;; See function `eldoc-cmake-enable'.
 ;;
 ;;; Code:
 
@@ -13,6 +21,7 @@
 
 ;;;###autoload
 (defun eldoc-cmake-enable ()
+  "Enable eldoc support for a CMake file."
   (setq-local eldoc-documentation-function
               #'eldoc-cmake--function)
   (unless eldoc-mode (eldoc-mode)))
@@ -46,13 +55,15 @@
 (defun eldoc-cmake--extract-command (path)
   "Extract documentation from an .rst file in CMake.
 
-Extremely hacky: relies on whitespace, paragraphs, etc. It tries
+Extremely hacky: relies on whitespace, paragraphs, etc.  It tries
 to take the first English paragraph and the first code block as
 the synopsis and code example for a command/variable.
 
 To get better docstrings, the results \"may\" need to be examined
 by hand and potentially adjusted.
-"
+
+Argument PATH is the path to a .rst file in CMake's source that
+describes a single command."
   (with-temp-buffer
     (insert-file-contents path)
     (let (synopsis example name)
@@ -80,7 +91,7 @@ by hand and potentially adjusted.
        (t
         (list (list name synopsis example)))))))
 
-(defun eldoc-cmake--extract-commands (&optional path)
+(defun eldoc-cmake--extract-commands (path)
   "Extract docstrings from CMake source.
 
 Run this to regenerate the docstrings when they eventually go out
@@ -91,7 +102,9 @@ Example usage:
     (append
      (eldoc-cmake--extract-commands \"~/software/CMake/Help/command\")
      (eldoc-cmake--extract-commands \"~/software/CMake/Help/variable\"))
-"
+
+Argument PATH is the path to a directory full of .rst doc files
+in CMake's source."
   (cl-loop
    for fn in (directory-files path)
    when (string-match-p (rx ".rst" string-end) fn)
