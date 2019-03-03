@@ -16,6 +16,7 @@
 
 (require 'thingatpt)
 (require 'subr-x)
+(require 'cl-lib)
 
 (defvar eldoc-cmake--docstrings)
 
