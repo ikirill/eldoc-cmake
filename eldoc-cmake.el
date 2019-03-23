@@ -242,9 +242,16 @@ file." "  exec_program(Executable [directory in which to run]
     file(`READ`_ <filename> <out-var> [...])
     file(`STRINGS`_ <filename> <out-var> [...])
     file(`\\<HASH\\> <HASH_>`_ <filename> <out-var>)
-    file(`TIMESTAMP`_ <filename> <out-var> [...])") ("find_file" nil nil) ("find_library" "When more than one value is given to the ``NAMES`` option this command by
-default will consider one name at a time and search every directory
-for it." nil) ("find_package" "Find an external project, and load its settings." "  find_package(<PackageName> [version] [EXACT] [QUIET] [MODULE]
+    file(`TIMESTAMP`_ <filename> <out-var> [...])") ("find_file" nil nil)
+    ("find_library"
+"This command is used to find a library. A cache entry named by <VAR> is created to store the result of this command."
+"find_library (<VAR> name | NAMES name1 [name2 ...] [NAMES_PER_DIR]
+          [HINTS path1 [path2 ... ENV var]]
+          [PATHS path1 [path2 ... ENV var]] [PATH_SUFFIXES suffix1 [suffix2 ...]]
+          [DOC \"cache documentation string\"]
+          [NO_DEFAULT_PATH] [NO_PACKAGE_ROOT_PATH] [NO_CMAKE_PATH]
+          [NO_CMAKE_ENVIRONMENT_PATH] [NO_SYSTEM_ENVIRONMENT_PATH] [NO_CMAKE_SYSTEM_PATH]
+          [CMAKE_FIND_ROOT_PATH_BOTH | ONLY_CMAKE_FIND_ROOT_PATH | NO_CMAKE_FIND_ROOT_PATH])") ("find_package" "Find an external project, and load its settings." "  find_package(<PackageName> [version] [EXACT] [QUIET] [MODULE]
                [REQUIRED] [[COMPONENTS] [components...]]
                [OPTIONAL_COMPONENTS components...]
                [NO_POLICY_SCOPE])") ("find_path" "When searching for frameworks, if the file is specified as ``A/b.h``, then
