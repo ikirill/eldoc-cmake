@@ -3,7 +3,7 @@
 ;; Author: Kirill Ignatiev
 ;; URL: https://github.com/ikirill/eldoc-cmake
 ;; Version: 0
-;; Package-Requires: ((emacs "24.4"))
+;; Package-Requires: ((emacs "25.1"))
 ;;
 ;;; Commentary:
 ;;
@@ -29,7 +29,7 @@
 
 (defun eldoc-cmake--function ()
   "`eldoc-documentation-function` for CMake (`cmake-mode`)."
-  (when-let*
+  (when-let
       ((cursor (thing-at-point 'symbol))
        (docstring (assoc-string cursor eldoc-cmake--docstrings t)))
     (let ((synopsis (cadr docstring))
