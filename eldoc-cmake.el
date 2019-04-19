@@ -254,8 +254,15 @@ file." "  exec_program(Executable [directory in which to run]
           [CMAKE_FIND_ROOT_PATH_BOTH | ONLY_CMAKE_FIND_ROOT_PATH | NO_CMAKE_FIND_ROOT_PATH])") ("find_package" "Find an external project, and load its settings." "  find_package(<PackageName> [version] [EXACT] [QUIET] [MODULE]
                [REQUIRED] [[COMPONENTS] [components...]]
                [OPTIONAL_COMPONENTS components...]
-               [NO_POLICY_SCOPE])") ("find_path" "When searching for frameworks, if the file is specified as ``A/b.h``, then
-the framework search will look for ``A.framework/Headers/b.h``." nil) ("find_program" "When more than one value is given to the ``NAMES`` option this command by
+               [NO_POLICY_SCOPE])")
+          ("find_path" "When searching for frameworks, if the file is specified as ``A/b.h``, then
+the framework search will look for ``A.framework/Headers/b.h``."
+"find_path (<VAR> name | NAMES name1 [name2 ...]
+          [HINTS path1 [path2 ... ENV var]] [PATHS path1 [path2 ... ENV var]]
+          [PATH_SUFFIXES suffix1 [suffix2 ...]]
+          [DOC \"cache documentation string\"]
+          [NO_DEFAULT_PATH] [NO_PACKAGE_ROOT_PATH] [NO_CMAKE_PATH] [NO_CMAKE_ENVIRONMENT_PATH] [NO_SYSTEM_ENVIRONMENT_PATH] [NO_CMAKE_SYSTEM_PATH]
+          [CMAKE_FIND_ROOT_PATH_BOTH | ONLY_CMAKE_FIND_ROOT_PATH | NO_CMAKE_FIND_ROOT_PATH])") ("find_program" "When more than one value is given to the ``NAMES`` option this command by
 default will consider one name at a time and search every directory
 for it." nil) ("fltk_wrap_ui" "Create FLTK user interfaces Wrappers." "  fltk_wrap_ui(resultingLibraryName source1
                source2 ... sourceN )") ("foreach" "Evaluate a group of commands for each value in a list." "  foreach(<loop_var> <items>)
