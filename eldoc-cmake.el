@@ -2,7 +2,7 @@
 ;;
 ;; Author: Kirill Ignatiev
 ;; URL: https://github.com/ikirill/eldoc-cmake
-;; Version: 0
+;; Version: 0.1
 ;; Package-Requires: ((emacs "25.1"))
 ;;
 ;;; Commentary:
@@ -23,6 +23,7 @@
 ;;;###autoload
 (defun eldoc-cmake-enable ()
   "Enable eldoc support for a CMake file."
+  (interactive)
   (setq-local eldoc-documentation-function
               #'eldoc-cmake--function)
   (unless eldoc-mode (eldoc-mode)))
