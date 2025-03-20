@@ -41,16 +41,19 @@
 
 (defconst eldoc-cmake--langs
   '("ASM"
-    "ASM-ATT"
-    "ASM-MASM"
-    "ASM-NASM"
+    "ASM_ATT"
+    "ASM_MARMASM"
+    "ASM_MASM"
+    "ASM_NASM"
     "C"
     "CSharp"
     "CUDA"
     "CXX"
     "Fortran"
-    "Java"
-    "RC"
+    "HIP"
+    "ISPC"
+    "OBJC"
+    "OBJCXX"
     "Swift")
   "CMake's known languages, substituted for \"<LANG>\".")
 
