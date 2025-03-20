@@ -2,7 +2,7 @@
 ;;
 ;; Author: Kirill Ignatiev
 ;; URL: https://github.com/ikirill/eldoc-cmake
-;; Version: 0.1
+;; Version: 1.0
 ;; Package-Requires: ((emacs "25.1"))
 ;;
 ;;; Commentary:
